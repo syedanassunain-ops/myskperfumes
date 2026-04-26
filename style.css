@@ -253,17 +253,15 @@ section {
 .product-card {
     background: var(--apple-grey-bg);
     border-radius: var(--apple-radius-lg);
-    padding: 60px;
+    padding: 60px 40px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     text-align: center;
     position: relative;
     transition: var(--transition);
     cursor: pointer;
-    overflow: hidden;
-    min-height: 600px;
+    /* Removed overflow:hidden and fixed min-height to prevent clipping */
 }
 
 .product-card:hover {
