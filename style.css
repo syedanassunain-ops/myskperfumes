@@ -308,15 +308,21 @@ section {
 
 .p-img {
     width: 100%;
-    max-width: 300px;
-    margin: 40px 0;
+    max-width: 280px;
+    height: 350px;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: var(--transition);
 }
 
 .p-img img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
+    max-width: 100%;
     object-fit: contain;
+    display: block;
 }
 
 .product-card:hover .p-img {
