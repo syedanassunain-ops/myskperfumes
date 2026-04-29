@@ -1,22 +1,20 @@
-/* 
-  MYSK PERFUMES - Apple Edition
-  A modern, minimalist design inspired by Apple.com
-*/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+html {
+    scroll-behavior: smooth;
+}
 
 :root {
-    --apple-black: #000000;
-    --apple-white: #ffffff;
-    --apple-grey-bg: #f5f5f7;
-    --apple-text: #1d1d1f;
-    --apple-text-grey: #86868b;
-    --apple-blue: #0066cc;
-    --apple-blue-hover: #0077ed;
-    --apple-radius: 20px;
-    --apple-radius-lg: 30px;
-    --glass-bg: rgba(255, 255, 255, 0.72);
-    --transition: all 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+    --bg-dark: #0a0908;
+    --bg-darker: #050505;
+    --accent-gold: #c5a059;
+    --accent-gold-hover: #e0bc75;
+    --text-light: #f8f8f8;
+    --text-muted: #a0a0a0;
+    --border-dim: rgba(197, 160, 89, 0.2);
+    --transition-smooth: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Inter', sans-serif;
 }
 
 * {
@@ -24,510 +22,452 @@
     padding: 0;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    image-rendering: -webkit-optimize-contrast;
-    /* Sharpens images on some browsers */
 }
 
 html {
     scroll-behavior: smooth;
-    font-size: 16px;
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: var(--apple-text);
-    background-color: var(--apple-white);
-    line-height: 1.47059;
-    letter-spacing: -0.022em;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-sans);
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-smooth);
+}
+
+ul {
+    list-style: none;
+}
+
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 22px;
+    padding: 0 40px;
 }
 
-/* Global Typography */
-h1,
-h2,
-h3,
-h4 {
-    font-weight: 600;
-    letter-spacing: -0.012em;
+/* --- Typography --- */
+h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 300;
 }
 
-/* Glassmorphic Navigation */
+.italic {
+    font-style: italic;
+    color: var(--accent-gold);
+}
+
+/* --- Navigation --- */
 header {
-    background: var(--glass-bg);
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 9999;
-    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    background: rgba(10, 9, 8, 0.85);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 48px;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
+    height: 90px;
+    padding: 0 60px;
 }
 
-.logo a {
-    text-decoration: none;
-    color: var(--apple-text);
-    font-weight: 600;
-    font-size: 1.1rem;
-    letter-spacing: -0.5px;
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    line-height: 1;
 }
 
 .logo span {
-    font-weight: 400;
-    margin-left: 4px;
-    opacity: 0.6;
+    font-size: 0.65rem;
+    display: block;
+    letter-spacing: 3px;
+    margin-top: 2px;
+    color: var(--accent-gold);
 }
 
-.nav-menu {
+.nav-links {
     display: flex;
-    list-style: none;
-    gap: 30px;
+    gap: 50px;
 }
 
-.nav-menu a {
-    text-decoration: none;
-    color: var(--apple-text);
-    font-size: 0.75rem;
-    font-weight: 400;
-    opacity: 0.8;
-    transition: var(--transition);
+.nav-links a {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--text-muted);
 }
 
-.nav-menu a:hover {
-    opacity: 1;
-    color: var(--apple-blue);
+.nav-links a:hover {
+    color: var(--accent-gold);
 }
 
-/* Dynamic Hero Section */
+.shop-link {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border: 1px solid var(--accent-gold);
+    padding: 10px 20px;
+}
+
+.shop-link:hover {
+    background: var(--accent-gold);
+    color: #000;
+}
+
+/* --- Hero Section --- */
 .hero {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    padding-bottom: 10vh;
     text-align: center;
-    padding: 100px 20px;
-    background-color: var(--apple-white);
+    position: relative;
+    background: linear-gradient(to bottom, rgba(10, 9, 8, 0.1), rgba(10, 9, 8, 0.6)), url("images/hero_final.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
 }
 
-.hero-text h1 {
-    font-size: 5rem;
-    font-weight: 700;
-    margin-bottom: 6px;
-    letter-spacing: -0.02em;
+.hero-content {
+    max-width: 900px;
+    padding: 0 20px;
 }
 
-@media (max-width: 768px) {
-    .hero-text h1 {
-        font-size: 3.5rem;
-    }
+.hero-tag {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--accent-gold);
+    margin-bottom: 2rem;
+    display: block;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
 }
 
-.hero-text p.subhead {
-    font-size: 1.8rem;
-    font-weight: 400;
-    margin-bottom: 20px;
+.hero h1 {
+    font-size: 6rem;
+    line-height: 1;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 550px;
+    margin: 0 auto 45px;
+    font-weight: 300;
+    line-height: 1.8;
 }
 
 .hero-btns {
     display: flex;
-    gap: 24px;
+    gap: 25px;
     justify-content: center;
-    align-items: center;
 }
 
-.btn-apple-primary {
-    background: var(--apple-blue);
-    color: white;
-    padding: 12px 28px;
-    border-radius: 980px;
-    text-decoration: none;
-    font-size: 1.05rem;
-    font-weight: 500;
-    transition: var(--transition);
+.btn-primary {
+    background-color: var(--accent-gold);
+    color: #000;
+    padding: 18px 40px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+    border: 1px solid var(--accent-gold);
+    box-shadow: 0 4px 20px rgba(197, 160, 89, 0.2);
 }
 
-.btn-apple-primary:hover {
-    background: var(--apple-blue-hover);
+.btn-primary:hover {
+    background-color: var(--accent-gold-hover);
+    transform: translateY(-2px);
 }
 
-.btn-apple-link {
-    color: var(--apple-blue);
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 400;
+.btn-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+    padding: 18px 40px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
 }
 
-.btn-apple-link::after {
-    content: " \203A";
-    font-size: 1.4rem;
-    vertical-align: middle;
+.btn-secondary:hover {
+    border-color: var(--text-light);
+    background: rgba(255, 255, 255, 0.05);
 }
 
-.btn-apple-link:hover {
-    text-decoration: underline;
+/* --- Features Row --- */
+.features-row {
+    padding: 80px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-/* Video/Image Full Width */
-.hero-visual {
-    width: 85%;
-    max-width: 900px;
-    margin-top: 50px;
-    border-radius: var(--apple-radius);
-    overflow: hidden;
-    /* Extra soft but deep shadow for high-end look */
-    box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.15), 0 30px 60px -30px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(0, 0, 0, 0.02);
-}
-
-.hero-visual img,
-.hero-visual video {
-    width: 100%;
-    display: block;
-}
-
-/* Product Section */
-section {
-    padding: 120px 0;
-}
-
-.section-header {
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     text-align: center;
-    margin-bottom: 60px;
 }
 
-.section-header h2 {
-    font-size: 3rem;
-    font-weight: 700;
-    letter-spacing: -0.015em;
-    margin-bottom: 10px;
+.feature-item {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--text-muted);
 }
 
-.section-header p {
-    font-size: 1.5rem;
-    color: var(--apple-text-grey);
+/* --- Collection Section --- */
+.collection {
+    padding: 140px 0;
 }
 
-/* Product Grid - Apple Tiles */
+.section-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 80px;
+}
+
+.section-top h2 {
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.view-all {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--accent-gold);
+    padding-bottom: 8px;
+}
+
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.product-card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-@media (max-width: 900px) {
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
 }
 
 .product-card {
-    background: var(--apple-grey-bg);
-    border-radius: var(--apple-radius-lg);
-    padding: 60px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    transition: var(--transition);
-    cursor: pointer;
-    /* Removed overflow:hidden and fixed min-height to prevent clipping */
-}
-
-.product-card:hover {
-    transform: scale(1.01);
-}
-
-.p-tag {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #f56300;
-    /* New tag color */
-    margin-bottom: 12px;
-    text-transform: uppercase;
-}
-
-.product-card h3 {
-    font-size: 2.2rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-
-.product-card .desc {
-    font-size: 1.1rem;
-    color: var(--apple-text-dark);
-    margin-bottom: 24px;
-    max-width: 80%;
-}
-
-.p-pricing-luxury {
-    margin-bottom: 40px;
-}
-
-.p-discounted {
-    font-size: 1.2rem;
-    font-weight: 500;
-}
-
-.free-shipping-badge {
+    transition: var(--transition-smooth);
     display: block;
-    font-size: 0.8rem;
-    color: var(--apple-text-grey);
-    margin-top: 6px;
 }
 
-.p-img {
+.product-image {
     width: 100%;
-    max-width: 280px;
-    height: 350px;
-    margin: 40px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: var(--transition);
+    aspect-ratio: 4/5;
+    background-color: #111;
+    margin-bottom: 25px;
+    overflow: hidden;
 }
 
-.p-img img {
-    width: auto;
+.product-image img {
+    width: 100%;
     height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-    display: block;
+    object-fit: cover;
+    transition: transform 2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.product-card:hover .p-img {
-    transform: scale(1.05);
+.product-card:hover .product-image img {
+    transform: scale(1.08);
 }
 
-/* Testimonials - Apple Style Cards */
-.testimonials {
-    background-color: var(--apple-grey-bg);
-}
-
-.test-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 20px;
-}
-
-.test-card-luxury {
-    background: var(--apple-white);
-    padding: 40px;
-    border-radius: var(--apple-radius);
+.product-info {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    transition: var(--transition);
+    align-items: flex-start;
 }
 
-.test-stars {
-    color: #ffb800;
-    font-size: 0.75rem;
-    margin-bottom: 20px;
+.product-category {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    display: block;
 }
 
-.test-card-luxury p {
-    font-size: 1.2rem;
-    font-weight: 500;
-    line-height: 1.4;
-    color: var(--apple-text);
+.product-name {
+    font-size: 1.4rem;
+    font-family: var(--font-serif);
+    color: var(--text-light);
 }
 
-.test-user {
-    margin-top: 30px;
-    display: flex;
+.product-price {
+    font-size: 1.1rem;
+    color: var(--accent-gold);
+    font-weight: 400;
+}
+
+/* --- Story Section --- */
+.story {
+    padding: 120px 0;
+    background-color: var(--bg-darker);
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 100px;
     align-items: center;
-    gap: 12px;
 }
 
-.user-init {
-    width: 36px;
-    height: 36px;
-    background: #e8e8ed;
-    color: var(--apple-text);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    font-size: 0.8rem;
+.story-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
 }
 
-.user-info h5 {
-    font-size: 0.95rem;
-    font-weight: 600;
-}
-
-.user-info span {
-    font-size: 0.8rem;
-    color: var(--apple-text-grey);
-}
-
-/* Modal - Apple Overlays */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
+.story-image img {
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
+    object-fit: cover;
 }
 
-.modal.active {
-    opacity: 1;
-    visibility: visible;
+.story-content h3 {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent-gold);
+    margin-bottom: 25px;
 }
 
-.modal-content {
-    background-color: var(--apple-white);
-    border-radius: var(--apple-radius-lg);
-    padding: 60px;
-    max-width: 600px !important;
-    width: 90%;
-    position: relative;
+.story-content h2 {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 35px;
 }
 
-.close-modal {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 1.8rem;
-    color: var(--apple-text-grey);
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.close-modal:hover {
-    color: var(--apple-black);
-}
-
-.modal-luxury-header h3 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: -0.015em;
-}
-
-.luxury-group label {
-    font-weight: 600;
-    font-size: 0.85rem;
-    margin-bottom: 12px;
-}
-
-.luxury-group input,
-.luxury-group select,
-.luxury-group textarea {
-    background: var(--apple-grey-bg);
-    border: none;
-    border-radius: 12px;
-    padding: 16px;
-    font-size: 1rem;
-    margin-bottom: 10px;
-}
-
-.luxury-size-options {
-    gap: 10px;
-}
-
-.l-size-opt span {
-    border-radius: 12px;
-    border: 2px solid transparent;
-    background: var(--apple-grey-bg);
-    padding: 14px;
-}
-
-.l-size-opt input:checked+span {
-    border-color: var(--apple-blue);
-    background: var(--apple-white);
-    color: var(--apple-blue);
-}
-
-.btn-luxury-submit {
-    border-radius: 980px;
-    background: var(--apple-blue);
-    color: white;
-    padding: 16px;
+.story-content p {
     font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 45px;
+    max-width: 500px;
+    line-height: 1.8;
 }
 
-/* Footer Apple Style */
+.read-story {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent-gold);
+    border-bottom: 1px solid var(--accent-gold);
+    padding-bottom: 8px;
+}
+
+/* --- Quote Section --- */
+.quote-section {
+    padding: 180px 0;
+    text-align: center;
+}
+
+.quote-section blockquote {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    max-width: 900px;
+    margin: 0 auto 35px;
+    line-height: 1.2;
+    color: var(--text-light);
+}
+
+.quote-author {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--text-muted);
+}
+
+/* --- Footer --- */
 footer {
-    background: var(--apple-grey-bg);
-    padding: 60px 0;
-    color: var(--apple-text-grey);
-    font-size: 0.75rem;
+    padding: 120px 0 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-.footer-grid {
-    border-bottom: 1px solid #d2d2d7;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+.footer-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 80px;
+    margin-bottom: 100px;
 }
 
-.footer-info h3 {
-    color: var(--apple-text);
-    margin-bottom: 10px;
+.footer-logo .logo {
+    margin-bottom: 35px;
+}
+
+.footer-logo p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    max-width: 350px;
+    line-height: 1.9;
+}
+
+.footer-col h4 {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent-gold);
+    margin-bottom: 35px;
+}
+
+.footer-col ul li {
+    margin-bottom: 18px;
+}
+
+.footer-col ul li a {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.footer-col ul li a:hover {
+    color: var(--text-light);
+    padding-left: 5px;
 }
 
 .footer-bottom {
-    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    padding-top: 50px;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
 }
 
-/* Sticky WhatsApp */
-.wa-sticky {
-    background: #000;
-    color: #fff;
-    right: 30px;
-    bottom: 30px;
-    border-radius: 980px;
-    padding: 12px 24px;
-    font-size: 0.8rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+    .hero h1 { font-size: 4.5rem; }
+    .story-grid { gap: 50px; }
+    .story-content h2 { font-size: 3.5rem; }
+    .footer-main { gap: 40px; }
 }
 
-.wa-sticky i {
-    font-size: 1.1rem;
-}
-
-/* Animation utilities */
-[data-aos] {
-    transition-duration: 800ms !important;
+@media (max-width: 768px) {
+    nav { padding: 0 30px; }
+    .nav-links { display: none; }
+    .hero h1 { font-size: 3.5rem; }
+    .features-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    .product-grid { grid-template-columns: 1fr; }
+    .story-grid { grid-template-columns: 1fr; }
+    .story-image { aspect-ratio: 16/9; }
+    .footer-main { grid-template-columns: 1fr; }
+    .quote-section blockquote { font-size: 2rem; }
+    .section-top { flex-direction: column; align-items: flex-start; gap: 20px; }
 }
