@@ -8,14 +8,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Clean Scroll and Transition Logic
-    const header = document.querySelector('header');
+    // Navigation Scroll Effect
     window.addEventListener('scroll', () => {
-        header.style.boxShadow = window.scrollY > 20 ? '0 4px 12px rgba(0,0,0,0.05)' : 'none';
+        const header = document.querySelector('header');
         if (window.scrollY > 50) {
-            header.style.background = 'rgba(255, 255, 255, 0.9)';
+            header.classList.add('scrolled');
         } else {
-            header.style.background = 'rgba(255, 255, 255, 0.72)';
+            header.classList.remove('scrolled');
         }
+    });
+
+    // Mobile Menu Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Close menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
     });
 
     // Smooth Scrolling for Internal Links
